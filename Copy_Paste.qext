@@ -7,6 +7,7 @@
 	"author": "Gerrit Bury",
 	"homepage": "http://www.inform-bi.com",
 	"keywords": "qlik-sense, visualization, copy&paste",
+	"preview": "preview.png",
 	"license": "do-whatever-you-want",
 	"repository": "",
 	"dependencies": {
