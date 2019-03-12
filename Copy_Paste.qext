@@ -3,7 +3,7 @@
 	"description": "Enable Copy&Paste of values via CTRL-C hotkey",
 	"type": "visualization",
 	"version": "1.0.0",
-	"icon": "extension",
+	"icon": "copy",
 	"author": "Gerrit Bury",
 	"homepage": "http://www.inform-bi.com",
 	"keywords": "qlik-sense, visualization, copy&paste",
