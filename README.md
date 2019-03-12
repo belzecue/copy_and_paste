@@ -1,4 +1,4 @@
-# Copy & Paste in Qlik
+# Copy & Paste in Qlik Sense
 
 Use-Case:
 Copy&Paste values from objects of a Qlik Dashboard (charts, listboxes, tables, ...) to the clipboard for later usage.
