@@ -25,16 +25,16 @@ function ( qlik, $) {
 					// grab value from Qlik Diagram Popup		
 					var popupText = $(".qv-chart-tooltip-content").text(); // if you want descriptions included, use .qv-tp-row instead //qv-chart-tooltip-content //  .qv-tp-value // la-vie-tooltip // qv-chart-tooltip-content
 					// little bit of string cleanup
-					//popupText = popupText.trim(); // no spaces
-					//popupText = popupText.replace(/\t/g, ''); // no tabs
-					//popupText = popupText.replace(/\r\n|\n|\r/g, ' '); // replace CR/LF with spaces
+					popupText = popupText.trim(); // no spaces
+					popupText = popupText.replace(/\t/g, ''); // no tabs
+					popupText = popupText.replace(/\r\n|\n|\r/g, ' '); // replace CR/LF with spaces
 					textArea.value = popupText;			
 				}
 				else if ( $("#la-vie-tooltip").text().length > 1 ) { // pie charts use different DIV classes than all other diagrams, but only when mouseover is active...
 					var popupPieChartText = $("#la-vie-tooltip").text(); // get info of pie chart popup
-					popupPieChartText = popupPieChartText.trim();
-					popupPieChartText = popupPieChartText.replace(/\t/g, '');
-					popupPieChartText = popupPieChartText.replace(/\r\n|\n|\r/g, ' ');
+					//popupPieChartText = popupPieChartText.trim();
+					//popupPieChartText = popupPieChartText.replace(/\t/g, '');
+					//popupPieChartText = popupPieChartText.replace(/\r\n|\n|\r/g, ' ');
 					textArea.value = popupPieChartText;	
 				}
 				else {
