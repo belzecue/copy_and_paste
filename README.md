@@ -13,4 +13,4 @@ Drag&Drop the extension to each Qlik sheet you want to provide this functionalit
 
 
 Remark:
-Tested for Qlik Sense Feb 2019 in Chrome 72. Highly experimental, because selected (mouseover) values are identified by classes / ids in the DOM, which might change in future versions of Qlik.
+Tested for Qlik Sense Feb 2019 in Chrome 72+, Firefox 64+, Edge 42+. Highly experimental, because selected (mouseover) values are identified by classes / ids in the DOM, which might change in future versions of Qlik.
