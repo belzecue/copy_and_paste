@@ -17,7 +17,7 @@ function ( qlik, $) {
 			function doCopy() {		
 
 				// check if Qlik mouseover tooltip for diagrams is active/visible
-				var tooltipStyle = $( "#qs-chart-tooltip" ).children().attr( "style" );	
+				var tooltipStyle = $( "#qs-chart-tooltip" ).children().attr( "style" );				
 				
 				// this var will be copied to clipboard later
 				var clipboard = '';					
@@ -40,16 +40,17 @@ function ( qlik, $) {
 					clipboard = popupPieChartText;	
 				}
 				else {
-					// grab value of other elements
+					// grab value of other elements like listboxes + tables via bound mouseover
 					clipboard = mouseoverText.trim(); // no spaces
 				}
 				
-				// debug: output to console
-				// console.log(textArea.value);
-				// console.log(window.navigator.userAgent);
+				// debug: output to console	
+				//console.log('clipboard:');				
+				//console.log(clipboard);				
+				//console.log(window.navigator.userAgent);
 
 				// check for IE11: true on IE11, false on Edge and other IEs/browsers.
-				var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;  		
+				var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;  								
 
 				// IE11 support: the IE11 cannot remove the textbox afterwards, so we have to use a different method
 				if (isIE11) {				
@@ -75,31 +76,34 @@ function ( qlik, $) {
 				}
 			}
 			
+
+			// wait for DOM
+			$( document ).ready(function() {	
+
+				// permanently scan for mouseover of Qlik Listboxes + Tables
+				$(".value, .qv-st-value-overflow, .kpi-value, .qv-listbox-text").bind("mouseenter",function(){ 
+						mouseoverText = $(this).text();		
+						//console.log('mouseoverText:');
+						//console.log(mouseoverText);			
+				});
 			
-			// permanently scan for mouseover of Qlik Listboxes + Tables
-			$(".qv-listbox-text, .value, .qv-st-value-overflow, .kpi-value").bind("mouseenter",function(){ 
-					mouseoverText = $(this).text();					
-			});
-			
-			
-			
-			// Look out for ctrl-c hotkey
-			$(document).keydown(function(e) {
-				if (e.keyCode == 67 && e.ctrlKey) {														
-					doCopy();									
-				}
-			});
- 				
+				// Look out for ctrl-c hotkey
+				$(document).keydown(function(e) {
+					if (e.keyCode == 67 && e.ctrlKey) {														
+						doCopy();									
+					}
+				});
+			});	
 				
 			// rendering code for GUI -> empty
-			$element.html( "" );			
-			
+			$element.html( "" );						
 			
 			//needed for export
 			return qlik.Promise.resolve();
 			
-		}
-	};
 
-} );
+		} // paint
+	}; 
+
+});
 
