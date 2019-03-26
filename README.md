@@ -13,4 +13,5 @@ Drag&Drop the extension to each Qlik sheet you want to provide this functionalit
 
 
 Remark:
-Tested for Qlik Sense Feb 2019 in Chrome 72+, Firefox 64+, Edge 42+ and IE11. Highly experimental, because selected (mouseover) values are identified by classes / ids in the DOM, which might change in future versions of Qlik.
+Tested for Qlik Sense Feb 2019 in Chrome 72+, Firefox 64+, Edge 42+ and IE11. For whatever reason when using Qlik Sense Desktop with the builtin browser engine (and not a dedicated browser), activating/highlighting the window is not enough: you have to actually click somewhere on the sheet (!) in your dashboard (some whitespace, no selection needed) or else ctrl-c won't work.
+Highly experimental, because selected (mouseover) values are identified by classes / ids in the DOM, which might change in future versions of Qlik.
